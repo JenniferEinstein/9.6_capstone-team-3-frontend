@@ -13,6 +13,7 @@ export default function AllEvents() {
   const [events, setEvents] = useState([])
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [upcomingEvents, setUpcomingEvents] = useState([]);
+  const [isDarkMode, setDarkMode] = useState(false);
 
 
   useEffect(() => {
@@ -36,8 +37,13 @@ export default function AllEvents() {
 
     }, [events]);
 
+    const toggleMode = () => {
+      setDarkMode(!isDarkMode);
+    };
+  
 return (
-  <div>
+  <div className={isDarkMode ? 'dark-mode' : 'light-mode'}>
+    <button onClick={toggleMode}>Toggle Mode</button>
     <h2>Current Event</h2>
     <ul className="current-container">
       {
