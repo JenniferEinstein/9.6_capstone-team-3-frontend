@@ -125,7 +125,7 @@ export default function Profile({user}) {
         </ul>
       </div>
       <div className='profile-container right-column'>
-        <h1>User Profile</h1>
+        <h1></h1>
         <section className='bio-container'>
           <div className='pfp-container'>
             {/* We are going to edit the layout of this page next. */}
