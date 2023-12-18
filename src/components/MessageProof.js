@@ -43,7 +43,7 @@ function MessageProof() {
     <h2>Time to add pictures of the gift you received to the gallery!</h2>
     <p>
         Take a picture and upload it to the gallery {' '}
-        <button onClick={openUploadModal}>here</button>. Adding your picture lets us know that your match did their job. You will be given an opportunity to leave a little note describing your gift and/or thoughts. Our aim is to spread joy! 
+        <button className='button button-open-modal' onClick={openUploadModal}>here</button>. Adding your picture lets us know that your match did their job. You will be given an opportunity to leave a little note describing your gift and/or thoughts. Our aim is to spread joy! 
     </p>
     <p>
         Please don't leave a negative note. 
