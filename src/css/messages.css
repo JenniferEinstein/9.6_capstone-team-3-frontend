@@ -50,6 +50,16 @@ body{
   transition: none;
   border: none;
 }
+
+.button-open-modal:hover {
+  background-color: #ED6495;
+  box-shadow: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  margin: 1px;
+  transition: none;
+  border: none;
+}
   
 .address {
     margin: 0 30% 5%;
