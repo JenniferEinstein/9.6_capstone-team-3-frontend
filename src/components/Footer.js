@@ -1,3 +1,5 @@
+// Footer.js
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../css/footer.css';
@@ -41,7 +43,7 @@ function Footer() {
                   <Link to="/about" >About Us</Link>
                 </li>
                 <li className="menu-item ">
-                  <Link to="/faq">FAQ</Link></li>
+                  <Link to="/about#faq">FAQ</Link></li>
                 <li className="menu-item">
                   <Link to="/events">Event</Link>
                 </li>
