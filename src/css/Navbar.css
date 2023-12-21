@@ -109,7 +109,34 @@
   
 
 
-@media only screen and (max-width: 600px) {
-  .navbar-middle-links {
-    display: none; 
-  }}
+
+
+  #navbar-signup{
+    padding: 7.5px 12px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .navbar-middle-links {
+      display: flex;
+      flex-direction: row; 
+      align-items:flex-start; 
+      justify-content: space-between; 
+    }
+  
+    #events-middle-link {
+      display: block;
+    }
+  
+    #hiw-middle-link,
+    #about-middle-link {
+      display: none;
+    }
+  
+    #navbar-links {
+      margin-left: auto; 
+    }
+    .navbar-middle-links {
+      display: flex;
+    }
+
+  }

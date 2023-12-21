@@ -41,7 +41,7 @@ function App() {
     const unsubscribe = auth.onAuthStateChanged(async (authUser) => {
       // console.log(authUser) // working
       if (authUser) {
-        // console.log('authUser:', authUser) // working
+        console.log('authUser:', authUser) // working
         setUser(authUser) // firebase data for user
         // console.log(authUser.uid) // working
         setUserUid(authUser.uid) 
@@ -60,7 +60,8 @@ function App() {
             console.error(`User not found in the database, check if user is logged in properly`)
             setUserData(null)
           }
-        } catch (error) {
+        }
+        catch (error) {
           console.error('Error fetching user data:', error)
         } finally {
           setLoading(false);
@@ -75,16 +76,13 @@ function App() {
   }, [])
 
   const userId = userData ? userData.id : null 
-  // if (userData === null) {
-  //   return <div>Loading...</div>;
-  // }
-  // console.log(userData.id) // working
+
   const handleLogout = async () => {
     try {
-      await auth.signOut()
+      await auth.signOut().then(()=> window.location.reload())
       console.log(user.displayName, `is logged out.`)
       setUserData(null) // Clear user data
-      console.log(user)
+      console.log(userData)
     } catch (error) {
       console.error('Error during logout:', error)
     }
@@ -107,6 +105,7 @@ function App() {
 
             {/* USERS CURD NEW-SHOW-EDIT-INDEX*/}
             <Route path="/signup" element={<Signup userData={userData}/>} />
+
             {/* <Route path="/create-profile" element={<CreateProfile />} /> */}
             <Route path="/profile/:userId" element={<Profile userData={userData}/>} />
             <Route path="/profile/:userId/account-edit" element={<Account userData={userData}/>} />
@@ -114,13 +113,13 @@ function App() {
             <Route path="/users/" element={<Users />} />
 
             {/* EVENTS CRUD NEW-SHOW-EDIT-INDEX*/}
-            <Route path="/events" element={user? <AllEvents userId = {userId} userData={userData}/> : <Navigate to='login'/>} /> 
+            <Route path="/events" element={user? <AllEvents userId = {userId} userData={userData}/> : <Navigate to='./'/>} /> 
             {/* <Route path="/events/:eventId" element={<CurrentEvent />} /> */}
 
             {/* USER EVENTS NEW-SHOW-EDIT-INDEX*/}
             <Route 
               path="/events/:eventId/register/:userId" 
-              element={user? <EventSignUp userData={userData} userId={userId}/> : <Navigate to='login' />} />
+              element={user? <EventSignUp userData={userData} userId={userId}/> : <Navigate to='./' />} />
 
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/message-match" element={ <MessageMatch /> } />

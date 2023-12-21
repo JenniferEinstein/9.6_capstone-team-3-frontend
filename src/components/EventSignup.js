@@ -46,9 +46,16 @@ export default function EventSignUp({ userData, userId }) {
     
     const handleInputChange = (event) => {
         const { id, value } = event.target;
-        if (id === 'favorite_colors') {
+        if (id === 'favorite_color') {
+        // if (id === null) {
             const colorsArray = value.split(',').map(color => color.trim()).filter(String)
-            setUserDataForEvents((prevUserData) => ({ ...prevUserData, favorite_colors: colorsArray }))
+            console.log('Colors array:', colorsArray)
+            setUserDataForEvents((prevUserData) => ({ ...prevUserData, favorite_color: colorsArray }))
+        } else if (id === 'events_joined') {
+            setUserDataForEvents((prevUserData) => ({
+               ...prevUserData,
+               events_joined: [...prevUserData.events_joined, value],
+            }))
         } else {
             setUserDataForEvents((prevUserData) => ({ ...prevUserData, [id]: value }))
         }

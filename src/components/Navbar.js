@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../images/HELogo.png';
-import LoginModal from './LoginModal'; // Import the LoginModal component
+import LoginModal from './LoginModal'; 
 import '../css/Navbar.css';
 
 function Logo() {
@@ -26,17 +26,16 @@ function NavBar() {
           <Logo />  
         </Link>
         <div className='navbar-middle-links'>
-          <Link to="/events" id="events-middle-link" className="navbar-middle-link">events</Link>
-          <Link to="/how-it-works" className="navbar-middle-link">how it works</Link>
-          <Link to="/about" className="navbar-middle-link">about</Link>
+          <Link to="/events" id="events-middle-link" className="navbar-middle-link">Events</Link>
+          <Link to="/how-it-works" id="hiw-middle-link" className="navbar-middle-link">How it works</Link>
+          <Link to="/about" id="about-middle-link" className="navbar-middle-link">About</Link>
         </div>
       </div>
-      <div className="navbar-links">
-        {/* Replace the Login link with a button that opens the LoginModal */}
-        <button className="navbar-login-link" onClick={openModal}>
+      <div id="navbar-links" className="navbar-links">
+        <button id="navbar-login" className="navbar-login-link" onClick={openModal}>
           Login 
         </button>
-        <Link className="homepage-signup-link" to="/signup">
+        <Link id="navbar-singup" className="homepage-signup-link" to="/signup">
           Sign Up
         </Link> 
       </div>

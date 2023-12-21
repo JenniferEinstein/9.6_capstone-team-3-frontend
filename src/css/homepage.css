@@ -112,8 +112,8 @@ h1 {
   margin: 20px;
   padding: 65px;
   background-color: white;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  border-radius: 15px;
+
+  border-radius: 5px;
   border: 1px solid #545454;
   display: flex;
   flex-direction: column;
@@ -240,13 +240,6 @@ h1 {
     padding: 0 20px;
   }
 
-  .h1-container {
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-    flex-direction: row; 
-    justify-content: space-between; 
-    align-items: left;
-  }
 
   .image-container {
     width: 100%;
@@ -255,5 +248,15 @@ h1 {
   .image-container img {
     border-radius: 0; 
   }
+
+  
+
 }
 
+@media (max-width: 768px) {
+  .h1-container {
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+  }
+}

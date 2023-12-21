@@ -8,3 +8,64 @@
 .about {
     text-align: left;
 }
+
+
+/* FAQ CSS */
+
+@keyframes bounce-rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	40% {
+		transform: rotate(120deg);
+	}
+	60% {
+		transform: rotate(80deg);
+	}
+	40% {
+		transform: rotate(100deg);
+	}
+	100% {
+		transform: rotate(90deg);
+		fill: red;
+	}
+}
+@keyframes bounce-rotate-back {
+	0% {
+		transform: rotate(90deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+.f-triangle {
+	width: 7px;
+	height: 7px;
+	margin-right: 20px;
+	fill: #09f;
+	transition: .2s;
+}
+.accordion.js .accordion-content {
+	display: none;
+}
+.accordion {
+	h3 {
+		color: $color-secondary;
+	}
+	.accordion-toggle {
+		cursor: pointer;
+		&.open {
+			.f-triangle {
+				animation: bounce-rotate 1s forwards;
+			}
+		}
+		&.closed {
+			.f-triangle {
+				animation: bounce-rotate-back .2s forwards;
+			}
+		}
+	}
+	.accordion-content {
+		margin-left: 27px;
+	}
+}

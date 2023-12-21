@@ -70,7 +70,7 @@ function Home() {
       </div>
     </section>
   </div>
-  <div className="signup-container">
+  {/* <div className="signup-container">
     <section className="signup">
       <h2 className="signup-h2-title">Sign Up Today!</h2>
       <p className="signup-text">
@@ -83,7 +83,7 @@ function Home() {
         </Link>
       </div>
     </section>
-  </div>
+  </div> */}
   <div className="gallery-container">
         <Gallery previewMode={true} />
       </div>

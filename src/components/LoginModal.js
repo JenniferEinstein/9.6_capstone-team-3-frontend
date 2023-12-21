@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { auth } from "../firebaseConfig";
 import "../css/LoginModal.css"
@@ -14,20 +15,23 @@ const LoginModal = ({ openModal }) => {
         console.error("Username and password are required.");
         return;
       }
-
+  
       const userCredential = await signInWithEmailAndPassword(
         auth,
         username,
         password
-      );
+      ).then(() => window.location.reload() )
       const user = userCredential.user;
       const uid = user.uid;
-
+  
       setLoggedInUser(user);
+      console.log("Logged in user:", user);
+  
     } catch (error) {
       console.error("Login Error:", error);
     }
   };
+  
 
   const handleGoogleLogin = async () => {
     try {
@@ -42,7 +46,7 @@ const LoginModal = ({ openModal }) => {
 
   const handleLogout = async () => {
     try {
-      await signOut(auth);
+      await signOut(auth).then(()=> window.location.reload());
       setLoggedInUser(null);
     } catch (error) {
       console.error("Logout Error:", error);
@@ -52,13 +56,12 @@ const LoginModal = ({ openModal }) => {
   return (
     <div className="modal-container">
       <div className="modal-content">
-
-        <span id='close-container' className="close" onClick={openModal}>
+      <span id='close-container' className="close" onClick={openModal}>
           &times;
         </span>
-
         {loggedInUser ? (
           <div>
+            
             <div id="login-forum-container" className="login-forum-container">
               You are logged in as {loggedInUser.email}.
               <button
