@@ -27,6 +27,7 @@ import Profile from './components/PublicProfiles'
 // import UserPictureForm from "./components/UserPictureForm"
 // import CurrentEvent from './components/CurrentEvent'
 import EventSignUp from "./components/EventSignup"
+import EventRegistration from "./components/EventRegistration";
 // import Header from './components/Header'
 import MessageMatch from "./components/MessageMatch";
 import MessageProof from "./components/MessageProof";
@@ -103,7 +104,7 @@ function App() {
             <Route path="/exchanges-proof" element = { <ProofPage />} />
             <Route path="/login" element={<Login userData={userData}  />} />
 
-            {/* USERS CURD NEW-SHOW-EDIT-INDEX*/}
+            {/* USERS CRUD NEW-SHOW-EDIT-INDEX*/}
             <Route path="/signup" element={<Signup userData={userData}/>} />
 
             {/* <Route path="/create-profile" element={<CreateProfile />} /> */}
@@ -120,11 +121,13 @@ function App() {
             <Route 
               path="/events/:eventId/register/:userId" 
               element={user? <EventSignUp userData={userData} userId={userId}/> : <Navigate to='./' />} />
-
+                 
+            <Route 
+              path="/events2/:eventId/register/:userId" 
+              element={user? <EventRegistration userData={userData} userId={userId}/> : <Navigate to='./' />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/message-match" element={ <MessageMatch /> } />
             <Route path="/message-proof" element={ <MessageProof /> } />
-            {/* <Route path="/exchanges-proof" element = { <ProofPage />} /> */}
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </main>
