@@ -7,13 +7,13 @@ import { auth } from '../firebaseConfig';
 
 // STYLING
 import "../css/Events.css"
-// APT
+// API
 const API = process.env.REACT_APP_API_URL;
 
 function EventRegistration ({ userData, userId }) {
     
     const { eventId } = useParams()
-    // console.log('userId:', userId); // working 12/20
+
     let navigate = useNavigate()
 
     const [showDetails, setShowDetails] = useState(false);
@@ -103,14 +103,10 @@ function EventRegistration ({ userData, userId }) {
     }
     
     return (
-        <div className='event-signup-container'>
+        <div className='event-registration-container'>
         <div className=''>
-            <h1 className='welcome'>You're One Step Away From,</h1>
-            <h1 className='welcome-2'>Making Someone Feel Special!  </h1>
-        </div>
-        <div className='intro-container '>
-            <h2 className='section-header'>Thank you for joining this event, before you can register; please complete the form. </h2>
-            <span onClick={handleIconClick} className="question-mark-icon">
+            <h1>{ eventId.title } Registration Form
+            <span onClick={handleIconClick} className="question-icon">
                 <svg xmlns="http://www.w3.org/2000/svg"  
                 className="bi bi-question-circle" 
                 viewBox="0 0 16 16">
@@ -118,7 +114,9 @@ function EventRegistration ({ userData, userId }) {
                     <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/>
                 </svg>
             </span>
-        </div>
+            </h1>
+          </div>
+
         {showDetails && (
             <div className="details-box">
                 <p><strong>WHY THIS FORM? </strong>
@@ -127,15 +125,12 @@ function EventRegistration ({ userData, userId }) {
             </div>
         )}
         
-        <form className='signup-form'>
-            <label htmlFor="preferred_gift"> Based on the theme, if you could choose- what gift would you desire most? (Be specific): </label>
+        <form className='registration-form'>
+            <label htmlFor="preferred_gift">Based on the theme, what would your dream gift be? </label>
             <input type="text" id="preferred_gift" onChange={handleInputChange} value={userDataForEvents.preferred_gift} required/>
             <br />
-            <label htmlFor="gifts_avoid"> Based on the theme, if you could choose- what gift should your match avoid?(Be specific):</label>
+            <label htmlFor="gifts_avoid"> Based on the theme, what gift should your match avoid?</label>
             <input type="text" id="gifts_avoid" onChange={handleInputChange} value={userDataForEvents.gifts_avoid} required/>
-            <br />
-            <label htmlFor="budget"> What's your gift giving budget?</label>
-            <input type="number" id="budget" onChange={handleInputChange} value={userDataForEvents.budget} required/>
             <br />
             <label htmlFor="favorite_color"> What's your favorite color?:</label>
             <input type="text" id="favorite_color"  onChange={handleInputChange} value={userDataForEvents.favorite_color} required/>
@@ -156,13 +151,6 @@ function EventRegistration ({ userData, userId }) {
                 </label>
             <br />
             </label>
-            <label htmlFor="duplicate"> Do you mind receiving an item or version of an item that you already own? 
-                <select id="duplicate" value={selectedOption} onChange={handleOptionChange} required>
-                    <option value=""></option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
-            </label>
             <ul className='rules-container'>
                 <h3 className='rules-h3'>Rules For <span className='rules-every'>EVERY</span> Event</h3>
                 <li className='rules'>If in the event you miss the shipping and tracking deadline or violate any of the terms, you will be at risk of being banned indefinently, per investigation by our team. Moreover, your gifter will have the chance to rescind sending their gift to you as an interim consequence.</li>
@@ -172,10 +160,13 @@ function EventRegistration ({ userData, userId }) {
                 <li className='rules'><span className='rules-not'>NOT</span> by any means, are you allowed to contact users requesting gifts. <span className='rules-not'>NOR</span> is revealing gifts prior to unboxing acceptable!</li>
             </ul>
             <div className='terms-container'>
+                
                 <label htmlFor="terms-checkbox" id='terms-text'>
                 <input type="checkbox" id="terms-checkbox" required /> Do You Agree To The Terms? </label>
                 <br />
+                <h2 className=''>You're One Click Away From Spreading Happiness</h2>
                 <button className="confirm button" onClick={handleConfirmation} >Confirm</button>
+
             </div>
         </form>
             {showConfirmation && (

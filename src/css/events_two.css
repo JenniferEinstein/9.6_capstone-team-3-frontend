@@ -1,461 +1,13 @@
-/* 
-        BRAND COLORS
-#276BE5-main color - bright blue - 15.3% red, 35.7% green and 89.8% blue.
-#6474ED-button color - soft blue - 39.2% red, 45.5% green and 92.9% blue
-#A4C1F4-other color - very soft blue - 64.3% red, 75.7% green and 95.7% blue. 
-#E8EFFC-background color - light grayish blue - 91% red, 93.7% green and 98.8% blue. 
-#ED6495-accent color - soft pink - 92.9% red, 39.2% green and 58.4% blue.
-*/
-
-
-/* Classes In Upcoming Events JS */
-
-.upcoming-container {
-    display: flex;
-    /* flex-direction: column; */
-    /* align-items: center; */
-    margin: 10px 10px 80px 10px;
-    width: auto;
-}
-
-.future-img{
-    border: 1px solid #FFFAEB;
-    /* border-radius: 20px; */
-    /* box-shadow: 12px 12px 2px 1px rgba(88, 24, 1, 0.2); */
-    margin: 10px 20px 20px 10px;
-    max-height: 290px;
-    object-fit: cover;
-    padding: 2px;
-    /* width: 450px; */
-    max-width: auto;
-}
-.days-until{
-    cursor:default;
-    font-size: 30px;
-    margin: 10px 10px 20px 10px;
-    /* text-shadow: .1px .5px 2px rgba(0, 0, 0, 0.576);     */
-}
-
-
-@media screen and (max-width: 970px){
-    .upcoming-container {
-        display: flex;
-        flex-direction: column;
-        margin: 10px 5px 60px 5px;
-        text-align: center;
-        width: auto;
-    }
-    
-    .future-img{
-        /* border-radius: 20px; */
-        max-height: 350px;
-        object-fit: cover;
-        /* padding: 2px; */
-        /* max-width: 500px; */
-        text-align: center;
-        width: 100%;
-    }
-}
-@media screen, (min-width: 970px) and (max-width: 1300px){
-    .event-type{
-        font-size: 20px;
-    }
-}
-@media (min-width: 2000px) and (max-width: 2500px) {
-    .future-img{
-        /* border-radius: 20px; */
-        margin: 10px 20px 20px 10px;
-        max-height: 350px;
-        object-fit: cover;
-        padding: 2px;
-        max-width: 600px;
-    }
-
-}
-
-/* Classes In All Events JS */
-   
-intro-container{
-    display: inline-block;
-}
-.introduction {
-    animation: 
-        typing 4s steps(36),
-        cursor .4s step-end infinite alternate;
-    border-right: .15em solid #000000; 
-    cursor:default; 
-    font-size: 50px;
-    letter-spacing: 3px;
-    overflow: hidden; 
-    white-space: nowrap; 
-    width: 100%;
-}
-/* The typing effect */
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: #000000; }
-    /* 50% { border-color: #A4C1F4; } */
-}
-
-.event-type{
-    color: #000;
-    cursor:default;
-    font-size: 45px;
-    margin: 50px 5px 10px 5px;
-}
-#upcoming{
-    text-align: start;
-    /* margin-top: 12%; */
-}
-.event-title {
-    color: #276BE5;
-    cursor:default;
-    font-size: 30px;
-    /* font-style: oblique; */
-    margin: 15px 5px 5px 5px; 
-}
-
-.current-container{
-    flex-direction: column;
-}
-.card{
-    background-color: #00818f00;
-    border: none;
-}
-.upcoming-container, .current-container{
-    display: flex;
-    list-style: none;
-    width: auto;
-}
-.upcoming-container > li > .event-title{
-    margin-top: 1000px;
-}
-
-@media (min-width: 446px) and (max-width: 662px)  {
-    .introduction {
-        font-size: 20px; 
-    }
-    .event-title {
-        font-size: 30px;
-    }
-    
-}
-@media (min-width: 662px) and (max-width: 926px) {
-    .introduction {
-        font-size: 30px; 
-    }
-    .event-title {
-        font-size: 30px;
-    }
-}
-@media (min-width: 927px) and (max-width: 1349px) {
-    .introduction {
-        font-size: 30px; 
-    }
-    li > .event-title{
-        font-size: 30px;
-    }
-}
-@media (min-width: 1349px) and (max-width: 1500px) {
-    .introduction {
-        font-size: 40px;
-    }
-    li > .event-title{
-        font-size: 30px;
-    }
-}
-@media (min-height: 900px) and (max-height:1000px){
-    .introduction {
-        font-size: 20px;
-    }
-    .event-type{
-        color: #000;
-        font-size: 47px;
-        /* margin: 30px 5px 1px 5px; */
-    }
-    li> .event-title {
-        color: #276BE5;
-        font-size: 30px;
-        /* margin: 5px; */
-    }
-}
-
-
-/* Classes in Current Event JS */
-
-.current-img{
-    border: 2px solid #FFFAEB;
-    /* border-radius: 20px; */
-    max-height: 600px;
-    margin: 30px 10px 30px 10px ;
-    object-fit: cover;
-    /* object-position: 50% 50%; */
-    /* padding: 10px; */
-    /* max-width: 500px; */
-    width: 100%;
-}
-.current-img:hover{
-    /* text-rendering: geometricPrecision; */
-    max-height: 600.5px;
-}
-.container{
-    position: relative;
-    text-align: center;
-}
-.join-container{
-    display: flex;
-    justify-content: center;
-}
-.join-now {
-    background-color: #ED6495;
-    border: 2px solid #FFFAEB;
-    border-radius: 30px;
-    color: #fff;
-    /* font-family: 'DM serif display'; */
-    font-size: 40px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    margin: 10px 10px 20px 10px;
-    padding: 10px 20px;
-    text-decoration: none;
-}
-.join-now:hover{
-    background-color: #fff;
-    color: #ED6495;
-    font-size: 45px;
-}
-.join-now:focus{
-    color: #000;
-}
-
-.description-CE-container{
-    background-color: #ffffffce;
-    /* border: 1.5px solid #545454; */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    cursor:default;
-    letter-spacing: .02em;
-    margin: 8px 85px 5px 85px;
-    padding: 35px;
-    word-spacing: 1px;
-}
-.description{
-    color: #000;
-    font-family: 'montserrat';
-    font-size: 1.2rem;
-    font-weight: 400;
-    letter-spacing: .07em;
-    margin: 5px 0px 5px 0px;
-    /* overflow: scroll; */
-    text-align: start;
-    text-wrap: wrap;
-    /* width: 40%; */
-}
-.description-price-title{
-    font-family: 'DM serif display';
-    font-size: 1.35em;
-    font-weight: 400;
-    letter-spacing: .06em;
-}
-.description-event-title{
-    font-weight: 400;
-    letter-spacing: .06em;
-    margin-top: 15px;
-    text-align: start;
-}
-.price-title{
-    letter-spacing: .099em;
-}
-.price-title, .price{
-    color: #6474ED;
-    padding: 0px 10px 0px 0px;
-    text-align: center;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.576);    
-}
-.price{
-    color: rgb(0, 0, 0);
-    font-size: 25px;
-}
-
-.collapse-details{
-    /* border: 1px dotted rgba(0, 0, 0, 0.111); */
-    margin: 5px 100px 5px 100px;
-    min-height: 250px;
-    width: 600px;
-}
-.collapse-toggle {
-    /* color: #ED6495; */
-    color: #6474ED;
-    font-size: 23px;
-    font-weight: 500;
-    margin: 25px 5px 5px 5px;
-    text-shadow: 0 1px 1px rgba(190, 88, 121, 0.492);    
-}
-.collapse-toggle:hover {
-    color: #000;    
-    cursor: pointer;
-    font-size: 23.2px;
-}
-
-.details-CEheader{
-    color: #ED6495;
-    font-size: 25px;
-    font-weight: 600;
-    letter-spacing: .06em;
-    text-shadow: 0 1px 1px rgba(190, 88, 121, 0.492);  
-    text-align: start;
-}
-.details-CE{
-    color: #000;
-    font-size: 23px;
-    margin-left: 8px;
-    text-align: start;
-}
-.timeline {
-    color: #6474ED;
-    letter-spacing: .03em;
-    margin: 5px;
-}
-.deadline{ 
-    color: red;
-    font-size: 27px;
-    letter-spacing: .02em;
-    text-shadow: 0 1px 1px rgba(99, 33, 54, 0.824);   
-}
-
-@media screen and (max-width: 1000px){
-    .current-img{
-        border-radius: 20px;
-        box-shadow: 1px 1px 2px 2px rgba(26, 22, 20, 0.246);
-        max-height: 700px;
-        object-fit: cover;
-        width: 100%;
-    }
-    .current-img:hover{
-        max-height: 705px;
-    }
-    .collapse-details{
-        border: 1px dotted rgba(0, 0, 0, 0.111);
-        margin: 5px 10px 5px 10px;
-        min-height: 250px;
-        width: 600px;
-    }
-    .collapse-toggle {
-        color: #6474ED;
-        font-size: 23px;
-        font-weight: 500;
-        margin: 5px 5px 5px 5px;
-        text-shadow: 0 1px 1px rgba(190, 88, 121, 0.492);    
-    }
-    .description-CE-container{
-        margin: 8px;
-        padding: 10px;
-        word-spacing: 3px;
-    }
-    .description{
-        margin: 5px;
-    } 
-    .timeline {
-        color: #6474ED;
-        font-size: 18px;
-        letter-spacing: .03em;
-        margin: 5px;
-    }
-    .details-CE{
-        color: #000;
-        font-size: 18px;
-        margin-left: 8px;
-        text-align: start;
-    }
-    .join-now {
-        font-size: 25px;
-    }
-    .join-now:hover{
-        font-size: 25px;
-    }
-}
-@media (min-width: 1000px) and (max-width: 1400px) {
-    .current-img{
-        border-radius: 20px;
-        box-shadow: 1px 1px 2px 2px rgba(26, 22, 20, 0.246);
-        max-height: 600px;
-        /* object-fit: cover; */
-        max-width: 900px;
-    }
-    .current-img:hover{
-        max-height: 600px;
-        max-width: 900px;
-    }
-
-    .timeline {
-        color: #6474ED;
-        font-size: 19px;
-        letter-spacing: .01em;
-        margin: 5px;
-    }
-    .details-CE{
-        color: #000;
-        font-size: 18px;
-        margin-left: 8px;
-    }
-    .deadline{
-        font-size: 25px;
-    }
-}
-@media (max-height: 1000px) and (max-width: 2000px) {
-    .current-img{
-        border-radius: 20px;
-        box-shadow: 1px 1px 2px 2px rgba(26, 22, 20, 0.246);
-        max-height: 700px;
-        /* object-fit: cover; */
-        max-width: 800px;
-    }
-    .current-img:hover{
-        max-height: 800px;
-        max-width: 1505px;
-    }
-}
-@media (min-height: 800px) and (max-height:1000px){
-    .current-img{
-        margin: 0px 10px 10px 10px;
-        max-height: 500px;
-        max-width: 900px;
-    }
-    .current-img:hover{
-        margin: 0px 10px 10px 10px;
-        max-height: 501px;
-        max-width: 900px;
-    }
-    .description-CE-container{
-        padding: 15px;
-    }
-    .join-now{
-        font-size: 30px;
-    }
-    .join-now:hover{
-        font-size: 32px;
-    }
-}
-
 /* Events Sign Up */
 
-.event-signup-container {
+.event-registration-container {
     align-items: start;
-    background: linear-gradient(
-        to top, 
-        #E8EFFC 0%,
-        #A4C1F4 10%,
-        #09676f6d 35%,
-        #276BE5 60%, 
-        #0c2147 100%
-    );
+    background-color:#E8EFFC;
+    color: #6474ed;
     display: flex;
     flex-direction: column;
     justify-content: start;
+    text-align: start;
     width: 100%;
     height: 100%;
 }
@@ -463,11 +15,11 @@ intro-container{
     color: #ED6495;
     font-size: 27px;
     margin: 20px;
-    text-shadow: 1px 1px 1px rgba(32, 27, 28, 0.492);    
 }
-.question-mark-icon {
+.question-icon {
     cursor: pointer;
     display: flex;
+    align-items: center;
     /* flex-direction: column; */
     /* margin-left: 8px; */
 }
@@ -477,6 +29,7 @@ intro-container{
     margin-left: 5px;
     margin-top: 16px;
     width: 30px;
+    align-items: center;
 }
 .bi-question-circle:hover{
    fill: black;
@@ -489,14 +42,13 @@ intro-container{
     padding: 10px;
 }
 
-.signup-form{
-    /* background-color:#E8EFFC; */
-    color: #276BE5;
+.registration-form{
+    color: #A4C1F4;
     /* display: flex; */
     text-align: start;
     /* width: 80%; */
 }
-.signup-form input {
+.registration-form input {
     background-color: #A4C1F4;
     border: 2px solid;
     padding: 10px;
@@ -505,14 +57,8 @@ intro-container{
     height: 3%;
     /* display: inline; */
 }
-#duplicate {
-    background-color: #A4C1F4;
-    border: 2px solid;
-    margin-left: 10px
-    /* width: 70px; */
-    /* height: 40px; */
-}
-.signup-form label{
+
+.registration-form label{
     color: #ffffff;
     font-size: 22px;
     margin: 20px;
@@ -527,16 +73,12 @@ intro-container{
 }
 
 .welcome, .welcome-2{
-    color:#E8EFFC;
-    font-size: 47px;
     margin: 10px;
 }
 .intro-container {
     display: flex;
     /* align-items: center; */
 }
-
-
 .rules-container{
     display: flex;
     flex-direction: column;
@@ -603,3 +145,16 @@ intro-container{
 @media screen and (max-width: 800px) {
 
 }
+
+
+
+
+/* 
+        BRAND COLORS
+#276BE5-main color - bright blue - 15.3% red, 35.7% green and 89.8% blue.
+#6474ED-button color - soft blue - 39.2% red, 45.5% green and 92.9% blue
+#A4C1F4-other color - very soft blue - 64.3% red, 75.7% green and 95.7% blue. 
+#E8EFFC-background color - light grayish blue - 91% red, 93.7% green and 98.8% blue. 
+#ED6495-accent color - soft pink - 92.9% red, 39.2% green and 58.4% blue.
+*/
+
