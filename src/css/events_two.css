@@ -34,12 +34,12 @@
 .bi-question-circle:hover{
    fill: black;
 }
-.details-box {
+.why-this-form {
     background-color: #ffffff25;
-    color: rgb(255, 255, 255);
     cursor: help;
     margin-top: 10px;
     padding: 10px;
+    text-align: left;
 }
 
 .registration-form{
@@ -55,26 +55,17 @@
     margin: 5px;
     width: 300px;
     height: 3%;
+    margin-left: 15%
     /* display: inline; */
 }
 
 .registration-form label{
-    color: #ffffff;
+    /* color: #ffffff; */
+    color: black;
     font-size: 22px;
-    margin: 20px;
-}
-#shirt_size,
-#pants_size,
-#shoe_size{
-    width: 70px;
-}
-#budget{
-    width: 70px;
+    margin-left: 10%;
 }
 
-.welcome, .welcome-2{
-    margin: 10px;
-}
 .intro-container {
     display: flex;
     /* align-items: center; */

@@ -4,18 +4,21 @@ import React, {useState, useEffect} from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
 import { auth } from '../firebaseConfig';
 // import { initializeApp } from 'firebase/app';
+import '../pages/Modal';
 
 // STYLING
-import "../css/Events.css"
+import "../css/events_two.css"
+
 // API
 const API = process.env.REACT_APP_API_URL;
 
+
+
+
 function EventRegistration ({ userData, userId }) {
-    
     const { eventId } = useParams()
-
     let navigate = useNavigate()
-
+    
     const [showDetails, setShowDetails] = useState(false);
     const [selectedOption, setSelectedOption] = useState('');
     const [showConfirmation, setShowConfirmation] = useState(false)
@@ -31,7 +34,15 @@ function EventRegistration ({ userData, userId }) {
         events_joined: [],
         // eventId:eventId 
     })
-    // I can't continue with updating values until I have a user authentication status or trigger - done
+    
+    const [isModalOpen, setModalOpen] = useState(false);
+    const openModal = () => {
+      setModalOpen(true);
+    };
+    const closeModal = () => {
+      setModalOpen(false);
+    };
+    
     //UPDATE
     const userEventRegistration = async (updatedUser) => {
         try {
@@ -118,28 +129,22 @@ function EventRegistration ({ userData, userId }) {
           </div>
 
         {showDetails && (
-            <div className="details-box">
-                <p><strong>WHY THIS FORM? </strong>
-                    <br />
-                    In order to be matched, it's required you fill out this form and stick to the rules of every event to ensure you recieve a gift that best suits you. </p>
+            <div className='why-this-form'>
+                <p><strong>WHY THIS FORM? </strong></p>
+                <p>In order to be matched, it's required you fill out this form and stick to the rules of every event to ensure you recieve a gift that best suits you. </p>
             </div>
         )}
         
         <form className='registration-form'>
-            <label htmlFor="preferred_gift">Based on the theme, what would your dream gift be? </label>
+            <label htmlFor="preferred_gift">Within the theme, what would your dream gift be? </label>
             <input type="text" id="preferred_gift" onChange={handleInputChange} value={userDataForEvents.preferred_gift} required/>
-            <br />
-            <label htmlFor="gifts_avoid"> Based on the theme, what gift should your match avoid?</label>
+            <label htmlFor="gifts_avoid">What gift or type of gifts should your match avoid?</label>
             <input type="text" id="gifts_avoid" onChange={handleInputChange} value={userDataForEvents.gifts_avoid} required/>
-            <br />
-            <label htmlFor="favorite_color"> What's your favorite color?:</label>
+            <label htmlFor="favorite_color">What's your favorite color?:</label>
             <input type="text" id="favorite_color"  onChange={handleInputChange} value={userDataForEvents.favorite_color} required/>
-            <br />
-            <label htmlFor="preferred_category"> Based on the theme, what category most interests you?(ie: "candy", "tech", "clothes" ):</label>
+            <label htmlFor="preferred_category">Keeping the theme in mind, what category most interests you? (<i>e.g.</i>, candy, tech, clothing ):</label>
             <input type="text" id="preferred_category" onChange={handleInputChange} value={userDataForEvents.preferred_category} required/>
-            <br />
-            <label htmlFor="clothes" > If applicable, 
-            <br />
+            <label htmlFor="clothes" > If you feel these are applicable, please provide your sizes.
                 <label htmlFor="shirt_size">Shirt Size:
                 <input type="text" id="shirt_size" onChange={handleInputChange} value={userDataForEvents.shirt_size}/>
                 </label>
@@ -151,14 +156,24 @@ function EventRegistration ({ userData, userId }) {
                 </label>
             <br />
             </label>
-            <ul className='rules-container'>
-                <h3 className='rules-h3'>Rules For <span className='rules-every'>EVERY</span> Event</h3>
-                <li className='rules'>If in the event you miss the shipping and tracking deadline or violate any of the terms, you will be at risk of being banned indefinently, per investigation by our team. Moreover, your gifter will have the chance to rescind sending their gift to you as an interim consequence.</li>
-                <li className='rules'>The premise of every event is "Secret Santa", therefore the person you are assigned to gift is not necessarily the same person who is assigned to gift you.</li>
-                <li className='rules'>We do <span className='rules-not'>NOT</span> by any means condone deragatory, sexually explicit nor discriminatory actions such has hate speech, bullying nor racially insensitive, comments or gifts. Please keep everything friendly and respectful. We seek to uplift and bring joy to any and everyone's lives.</li>
-                <li className='rules'>The minimum spend is set so that everyone is expected to stay within a range when shopping for gifts. Do keep in mind that after the minimum anything higher is a budget range set by the gifter and can extend far beyond or exactly at the minimum required spend.</li>
-                <li className='rules'><span className='rules-not'>NOT</span> by any means, are you allowed to contact users requesting gifts. <span className='rules-not'>NOR</span> is revealing gifts prior to unboxing acceptable!</li>
-            </ul>
+            <div className='rules-container'>
+                <h3 className='rules-h3'>Event Rules</h3>
+
+                <p>Complete rules can be found <span onClick={openModal} className='expanded-rules'> here</span>, but here are some quick reminders:</p>
+
+                {isModalOpen && (
+                    <Modal onClose={closeModal}>
+                <ul className='rules-container'>
+                    <li className='rules'>If in the event you miss the shipping and tracking deadline or violate any of the terms, you will be at risk of being banned indefinently, per investigation by our team. Moreover, your gifter will have the chance to rescind sending their gift to you as an interim consequence.</li>
+                    <li className='rules'>The premise of every event is "Secret Santa", therefore the person you are assigned to gift is not necessarily the same person who is assigned to gift you.</li>
+                    <li className='rules'>We do <span className='rules-not'>NOT</span> by any means condone deragatory, sexually explicit nor discriminatory actions such has hate speech, bullying nor racially insensitive, comments or gifts. Please keep everything friendly and respectful. We seek to uplift and bring joy to any and everyone's lives.</li>
+                    <li className='rules'>The minimum spend is set so that everyone is expected to stay within a range when shopping for gifts. Do keep in mind that after the minimum anything higher is a budget range set by the gifter and can extend far beyond or exactly at the minimum required spend.</li>
+                    <li className='rules'><span className='rules-not'>NOT</span> by any means, are you allowed to contact users requesting gifts. <span className='rules-not'>NOR</span> is revealing gifts prior to unboxing acceptable!</li>
+                </ul>
+                        
+                    </Modal>
+                )}
+            </div>
             <div className='terms-container'>
                 
                 <label htmlFor="terms-checkbox" id='terms-text'>
