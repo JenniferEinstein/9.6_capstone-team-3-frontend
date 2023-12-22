@@ -1,3 +1,5 @@
+// EventRegistration.js`
+
 // DEPENDENCIES
 import axios from 'axios';
 import React, {useState, useEffect} from 'react'
@@ -17,7 +19,7 @@ const API = process.env.REACT_APP_API_URL;
 
 function EventRegistration ({ userData, userId }) {
     const { eventId } = useParams()
-    let navigate = useNavigate()
+    const navigate = useNavigate()
     
     const [showDetails, setShowDetails] = useState(false);
     const [selectedOption, setSelectedOption] = useState('');
@@ -43,6 +45,11 @@ function EventRegistration ({ userData, userId }) {
       setModalOpen(false);
     };
     
+        const handleIconClick = () => {
+            setShowDetails(!showDetails);
+        }
+    
+    
     //UPDATE
     const userEventRegistration = async (updatedUser) => {
         try {
@@ -54,7 +61,6 @@ function EventRegistration ({ userData, userId }) {
             throw error
         }
     }  
-    
     const handleInputChange = (event) => {
         const { id, value } = event.target;
         if (id === 'favorite_color') {
@@ -85,11 +91,6 @@ function EventRegistration ({ userData, userId }) {
             // console.log(`Event Id:`, eventId)
             // console.log(`User Id:`, userId)
             // console.log(userDataForEvents)
-
-            if (selectedOption === 'Yes') {
-                alert("Please be advised that we try our best to ensure gifts are based on the desires of the receiver, but sometimes there are chances of being gifted an item you already own. As this may not be desired, it is reality, and therefore we require that everyone who joins any event understands and accepts this possibility to be able to join. If you don't mind, please change your response to 'No'.")
-                setShowConfirmation(showConfirmation)
-            } else if (selectedOption === 'No') {
                 // Update the state and get the updated user data
                 const updatedUserData = {
                     ...userDataForEvents,
@@ -102,15 +103,9 @@ function EventRegistration ({ userData, userId }) {
                 await userEventRegistration(updatedUserData)
                 console.log("Submitted successfully")
                 navigate(`/profile/${userId}`)
-
-            }
         } catch (error) {
             console.error(`Error Submitting`, error)
         }
-    }
-
-    const handleIconClick = () => {
-        setShowDetails(!showDetails);
     }
     
     return (
@@ -130,13 +125,13 @@ function EventRegistration ({ userData, userId }) {
 
         {showDetails && (
             <div className='why-this-form'>
-                <p><strong>WHY THIS FORM? </strong></p>
-                <p>In order to be matched, it's required you fill out this form and stick to the rules of every event to ensure you recieve a gift that best suits you. </p>
+                <p><strong>WHY THIS FORM?</strong></p>
+                <p>You can not be matched without the information on this form. Otherwise, the person who is getting you a gift won't know anything about you.  Make sure you stick to the rules of the event to ensure you receive a gift that best suits you. </p>
             </div>
         )}
         
         <form className='registration-form'>
-            <label htmlFor="preferred_gift">Within the theme, what would your dream gift be? </label>
+            <label htmlFor="preferred_gift">In thinking about the theme, what would your dream gift be?</label>
             <input type="text" id="preferred_gift" onChange={handleInputChange} value={userDataForEvents.preferred_gift} required/>
             <label htmlFor="gifts_avoid">What gift or type of gifts should your match avoid?</label>
             <input type="text" id="gifts_avoid" onChange={handleInputChange} value={userDataForEvents.gifts_avoid} required/>
@@ -156,42 +151,40 @@ function EventRegistration ({ userData, userId }) {
                 </label>
             <br />
             </label>
-            <div className='rules-container'>
+            <div className='rules-container2'>
                 <h3 className='rules-h3'>Event Rules</h3>
-
-                <p>Complete rules can be found <span onClick={openModal} className='expanded-rules'> here</span>, but here are some quick reminders:</p>
-
+                <p>
+                    Complete rules can be found{" "} 
+                    <span onClick={openModal} className="click-here" style={{ fontWeight: 'bold' }}>here</span>, but here are some quick reminders:
+                </p>
                 {isModalOpen && (
+
                     <Modal onClose={closeModal}>
-                <ul className='rules-container'>
-                    <li className='rules'>If in the event you miss the shipping and tracking deadline or violate any of the terms, you will be at risk of being banned indefinently, per investigation by our team. Moreover, your gifter will have the chance to rescind sending their gift to you as an interim consequence.</li>
-                    <li className='rules'>The premise of every event is "Secret Santa", therefore the person you are assigned to gift is not necessarily the same person who is assigned to gift you.</li>
-                    <li className='rules'>We do <span className='rules-not'>NOT</span> by any means condone deragatory, sexually explicit nor discriminatory actions such has hate speech, bullying nor racially insensitive, comments or gifts. Please keep everything friendly and respectful. We seek to uplift and bring joy to any and everyone's lives.</li>
-                    <li className='rules'>The minimum spend is set so that everyone is expected to stay within a range when shopping for gifts. Do keep in mind that after the minimum anything higher is a budget range set by the gifter and can extend far beyond or exactly at the minimum required spend.</li>
-                    <li className='rules'><span className='rules-not'>NOT</span> by any means, are you allowed to contact users requesting gifts. <span className='rules-not'>NOR</span> is revealing gifts prior to unboxing acceptable!</li>
-                </ul>
-                        
+                    <ul className='rules-container'>
+                        <li className='rules'>If in the event you miss the shipping and tracking deadline or violate any of the rules or terms, you will be at risk of being banned, per investigation by our team.</li>
+                        <li className='rules'>The person you will be giving a gift to is not the same person who is giving you a gift.</li>
+                        <li className='rules'>We do <span className='rules-not'>NOT</span> condone derogatory, sexually explicit, or discriminatory actions such has hate speech, bullying or racially insensitive comments or gifts. Please keep everything friendly and respectful. Seek to uplift and bring joy to any and everyone's lives.</li>
+                        <li className='rules'>The minimum spend is set so that no one feels cheated. Of course, anyone is allowed to spend more than the minimum.</li>
+                        <li className='rules'>You are <span className='rules-not'>NOT</span> allowed to contact users to request gifts. </li>
+                        <li>Do not upload a picture of the gift you are planning to send. <span className='rules-not'>NOR</span> Revealing gifts prior to unboxing spoils the fun and is unacceptable!</li>
+                    </ul>    
                     </Modal>
                 )}
             </div>
-            <div className='terms-container'>
-                
-                <label htmlFor="terms-checkbox" id='terms-text'>
-                <input type="checkbox" id="terms-checkbox" required /> Do You Agree To The Terms? </label>
+            <div className='terms-container2'>  
+                <label htmlFor="terms-checkbox2" id='terms-text2'>
+                <input type="checkbox" id="terms-checkbox2" required /> Do You Agree To The Terms? </label>
                 <br />
                 <h2 className=''>You're One Click Away From Spreading Happiness</h2>
                 <button className="confirm button" onClick={handleConfirmation} >Confirm</button>
-
             </div>
         </form>
             {showConfirmation && (
                 <div className='conclusion'>
-                    <h2 className='concluson-h2'>Form is complete, you've been added to the event. </h2>
-                    <h3 className='conclusion-h3'>Check you messages and notification in the app for updates.</h3>
+                    <h2 className='concluson-h2'>Thank you for registering; you've been added to the event. </h2>
+                    <h3 className='conclusion-h3'>Check your messages and notification in the app for updates.</h3>
                 </div>
             )}
-        <div className=''>
-        </div>
     </div>
   )
 }

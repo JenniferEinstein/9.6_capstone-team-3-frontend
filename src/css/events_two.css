@@ -80,6 +80,10 @@
     font-weight: 500;
     margin: 1 1 5px 1;
 }
+
+.click-here{
+    cursor: pointer;
+}
 .rules-every{
     font-weight: 700;
     text-decoration: underline;
