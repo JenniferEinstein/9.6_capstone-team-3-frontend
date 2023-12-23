@@ -133,26 +133,26 @@ function EventRegistration ({ userData, userId }) {
         <form className='registration-form'>
             <div className='row'>
                 <div className=''>
-                    <label htmlFor="preferred-gift">Within the theme, what would your dream gift be?</label>
+                    <label htmlFor="preferred_gift">Within the theme, what would your dream gift be?</label>
                 </div>
                 <div className=''>
-                    <textarea type="text" id="preferred-gift" className="preferred-gift" style={{height:"100px"}} onChange={handleInputChange} value={userDataForEvents.preferred_gift} />
-                </div>
-            </div>
-            <div className='row'>
-                <div className=''>
-                    <label htmlFor="gifts-avoid">What gift or type of gifts should your match avoid?</label>
-                </div>
-                <div className=''>
-                    <textarea type="text" id="gifts-avoid" className="gifts-avoid" style={{height:"100px"}} onChange={handleInputChange} value={userDataForEvents.gifts_avoid} />
+                    <textarea type="text" id="preferred_gift" className="preferred_gift" style={{height:"100px"}} onChange={handleInputChange} value={userDataForEvents.preferred_gift} />
                 </div>
             </div>
             <div className='row'>
                 <div className=''>
-                    <label htmlFor="favorite-color">What's your favorite color?</label>
+                    <label htmlFor="gifts_avoid">What gift or type of gifts should your match avoid?</label>
                 </div>
                 <div className=''>
-                    <input type="text" id="favorite-color" className="favorite-color"  onChange={handleInputChange} value={userDataForEvents.favorite_color} />            
+                    <textarea type="text" id="gifts_avoid" className="gifts_avoid" style={{height:"100px"}} onChange={handleInputChange} value={userDataForEvents.gifts_avoid} />
+                </div>
+            </div>
+            <div className='row'>
+                <div className=''>
+                    <label htmlFor="favorite_color">What's your favorite color?</label>
+                </div>
+                <div className=''>
+                    <input type="text" id="favorite_color" className="favorite_color"  onChange={handleInputChange} value={userDataForEvents.favorite_color} />            
                 </div>
             </div>
             <div className='row'>
