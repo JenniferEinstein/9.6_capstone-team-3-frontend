@@ -48,14 +48,17 @@
     text-align: start;
     /* width: 80%; */
 }
-.registration-form input {
+.registration-form input, 
+.registration-form textarea {
     background-color: #A4C1F4;
-    border: 2px solid;
+    border: 2px solid #6474ed;
     padding: 10px;
     margin: 5px;
-    width: 300px;
-    height: 3%;
-    margin-left: 15%
+    width: 80%;
+    height: auto;
+    margin-left: 15%;
+    box-sizing: border-box;
+    resize: vertical;
     /* display: inline; */
 }
 
@@ -64,13 +67,63 @@
     color: black;
     font-size: 22px;
     margin-left: 10%;
+    padding: 12px 12px 12px 0;
+    display: inline-block;
 }
+
+.clothing-sizes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: -5px;
+}
+
+
+.size input {
+    width: 40px;
+    height: 30px;
+}
+
+.size label {
+    display: block;
+    text-align: center;
+}
+
+/* Floating column for labels: 25% width */
+.col-25 {
+    float: left;
+    width: 25%;
+
+  }
+  
+  /* Floating column for inputs: 75% width */
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
 
 .intro-container {
     display: flex;
     /* align-items: center; */
 }
-.rules-container{
+.rules-container2{
+    color:#276BE5;
     display: flex;
     flex-direction: column;
     max-width: 1200px;
@@ -128,7 +181,6 @@
     border: 2px solid #FFFAEB;
     border-radius: 30px;
     padding: 10px 20px;
-    /* padding: 10px 20px 10px 20px; */
     width: auto;
 }
 

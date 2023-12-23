@@ -131,26 +131,56 @@ function EventRegistration ({ userData, userId }) {
         )}
         
         <form className='registration-form'>
-            <label htmlFor="preferred_gift">In thinking about the theme, what would your dream gift be?</label>
-            <input type="text" id="preferred_gift" onChange={handleInputChange} value={userDataForEvents.preferred_gift} required/>
-            <label htmlFor="gifts_avoid">What gift or type of gifts should your match avoid?</label>
-            <input type="text" id="gifts_avoid" onChange={handleInputChange} value={userDataForEvents.gifts_avoid} required/>
-            <label htmlFor="favorite_color">What's your favorite color?:</label>
-            <input type="text" id="favorite_color"  onChange={handleInputChange} value={userDataForEvents.favorite_color} required/>
-            <label htmlFor="preferred_category">Keeping the theme in mind, what category most interests you? (<i>e.g.</i>, candy, tech, clothing ):</label>
-            <input type="text" id="preferred_category" onChange={handleInputChange} value={userDataForEvents.preferred_category} required/>
-            <label htmlFor="clothes" > If you feel these are applicable, please provide your sizes.
-                <label htmlFor="shirt_size">Shirt Size:
-                <input type="text" id="shirt_size" onChange={handleInputChange} value={userDataForEvents.shirt_size}/>
+            <div className='row'>
+                <div className=''>
+                    <label htmlFor="preferred-gift">Within the theme, what would your dream gift be?</label>
+                </div>
+                <div className=''>
+                    <textarea type="text" id="preferred-gift" className="preferred-gift" style={{height:"100px"}} onChange={handleInputChange} value={userDataForEvents.preferred_gift} />
+                </div>
+            </div>
+            <div className='row'>
+                <div className=''>
+                    <label htmlFor="gifts-avoid">What gift or type of gifts should your match avoid?</label>
+                </div>
+                <div className=''>
+                    <textarea type="text" id="gifts-avoid" className="gifts-avoid" style={{height:"100px"}} onChange={handleInputChange} value={userDataForEvents.gifts_avoid} />
+                </div>
+            </div>
+            <div className='row'>
+                <div className=''>
+                    <label htmlFor="favorite-color">What's your favorite color?</label>
+                </div>
+                <div className=''>
+                    <input type="text" id="favorite-color" className="favorite-color"  onChange={handleInputChange} value={userDataForEvents.favorite_color} />            
+                </div>
+            </div>
+            <div className='row'>
+                <div className=''>
+                    <label htmlFor="preferred_category">Keeping the theme in mind, what category most interests you (e.g., candy, tech, clothing)?</label>
+                </div>
+                <div className=''>
+                    <input type="text" id="preferred_category" onChange={handleInputChange} value={userDataForEvents.preferred_category} required/>                    
+                </div>
+            </div>
+            <div className='row'>
+                <label htmlFor="clothes" >If you feel these are applicable, please provide your clothing sizes.
+                <div className='clothing-sizes'>
+                    <div className='size'>
+                        <label htmlFor="shirt_size2" className='size'>Shirt</label>
+                        <input type="text" id="shirt_size2" className='size' onChange={handleInputChange} value={userDataForEvents.shirt_size}/>
+                    </div>
+                    <div className='size'>
+                        <label htmlFor="pants_size2" className='size'>Pants</label>
+                        <input type="text" id="pants_size2" className='size' onChange={handleInputChange} value={userDataForEvents.pants_size}/>
+                    </div>
+                    <div className='size'>
+                        <label htmlFor="shoe_size2" className='size'>Shoes</label>
+                        <input type="text" id="shoe_size2" className='size' onChange={handleInputChange} value={userDataForEvents.shoe_size}/>
+                    </div>
+                </div>
                 </label>
-                <label htmlFor="pants_size">Pants Size:
-                <input type="text" id="pants_size" onChange={handleInputChange} value={userDataForEvents.pants_size}/>
-                </label>
-                <label htmlFor="shoe_size">Shoes Size:
-                <input type="text" id="shoe_size" onChange={handleInputChange} value={userDataForEvents.shoe_size}/>
-                </label>
-            <br />
-            </label>
+            </div>
             <div className='rules-container2'>
                 <h3 className='rules-h3'>Event Rules</h3>
                 <p>
