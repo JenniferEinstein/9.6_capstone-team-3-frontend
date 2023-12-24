@@ -13,7 +13,7 @@ const API = process.env.REACT_APP_API_URL;
 export default function EventSignUp({ userData, userId }) {
     
     const { eventId } = useParams()
-    // console.log('userId:', userId); // working 12/20
+    console.log('userId:', userId); // working 12/20
     let navigate = useNavigate()
 
     const [showDetails, setShowDetails] = useState(false);
@@ -33,16 +33,22 @@ export default function EventSignUp({ userData, userId }) {
     })
     // I can't continue with updating values until I have a user authentication status or trigger - done
     //UPDATE
-    const userEventRegistration = async (updatedUser) => {
-        try {
-            const response = await axios.put(`${API}/users/${userId}`, updatedUser)
-            // console.log(`API Response:`, response.data)
-            // console.log(userId)
-        } catch(error) {
-            console.error(error)
-            throw error
-        }
-    }  
+
+    // console.log(showDetails);
+    // console.log(selectedOption);
+    // console.log(userDataForEvents);
+
+
+    // const userEventRegistration = async (updatedUser) => {
+    //     try {
+    //         const response = await axios.put(`${API}/users/${userId}`, updatedUser)
+    //         console.log(`API Response:`, response.data)
+    //         console.log(userId)
+    //     } catch(error) {
+    //         console.error(error)
+    //         throw error
+    //     }
+    // }  
     
     const handleInputChange = (event) => {
         const { id, value } = event.target;
@@ -83,12 +89,28 @@ export default function EventSignUp({ userData, userId }) {
                 const updatedUserData = {
                     ...userDataForEvents,
                     events_joined: [...userDataForEvents.events_joined, eventId]
-                }
+                };
+
+                // Make an API call to update users_events table
+                await axios.post(`${API}/users-events/${userId}`, { event_id: eventId });
+                console.log('Updated users_events table successfully');
+
+                // Make a second API call to update users table
+                const response = await axios.put(`${API}/users/${userId}`, updatedUserData);
+                console.log('Updated users table successfully:', response.data);
+
+                // Update the local state
                 setUserDataForEvents(updatedUserData)
                 setShowConfirmation(!showConfirmation)
                 
                 console.log("Submitting User Data:", updatedUserData)
-                await userEventRegistration(updatedUserData)
+
+                //Update the users table
+                const responseOne = await axios.put(`${API}/users/${userId}`, updatedUserData);
+
+                // Insert a record into the users_events table
+                const responseTwo = await axios.post(`${API}/users-events/${userId}`, { event_id: eventId });
+
                 console.log("Submitted successfully")
                 navigate(`/profile/${userId}`)
 

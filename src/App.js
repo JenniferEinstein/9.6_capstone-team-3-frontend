@@ -42,7 +42,7 @@ function App() {
     const unsubscribe = auth.onAuthStateChanged(async (authUser) => {
       // console.log(authUser) // working
       if (authUser) {
-        console.log('authUser:', authUser) // working
+        //console.log('authUser:', authUser) // working
         setUser(authUser) // firebase data for user
         // console.log(authUser.uid) // working
         setUserUid(authUser.uid) 
@@ -54,8 +54,8 @@ function App() {
             // console.log(verifiedUser.firebase_uid === userUid) //working 
             return verifiedUser.firebase_uid === userUid
           })
-          console.log(loggedInUser.username, `is logged in`) // working
           if (loggedInUser) {
+            console.log(loggedInUser.username, `is logged in`) // working
             setUserData(loggedInUser)
           } else {
             console.error(`User not found in the database, check if user is logged in properly`)
