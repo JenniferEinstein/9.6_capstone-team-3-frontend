@@ -1,9 +1,8 @@
 // DEPENDENCIES
 import axios from 'axios';
-import React, {useState, useEffect} from 'react'
+import React, { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
 import { auth } from '../firebaseConfig';
-// import { initializeApp } from 'firebase/app';
 
 // STYLING
 import "../css/Events.css"
@@ -29,9 +28,8 @@ export default function EventSignUp({ userData, userId }) {
         preferred_gift: '', 
         gifts_avoid :'',
         events_joined: [],
-        // eventId:eventId 
     })
-    // I can't continue with updating values until I have a user authentication status or trigger - done
+
     //UPDATE
 
     // console.log(showDetails);
@@ -92,7 +90,7 @@ export default function EventSignUp({ userData, userId }) {
                 };
 
                 // Make an API call to update users_events table
-                await axios.post(`${API}/users-events/${userId}`, { event_id: eventId });
+                await axios.post(`${API}/users-events`, { event_id: eventId });
                 console.log('Updated users_events table successfully');
 
                 // Make a second API call to update users table
@@ -104,12 +102,6 @@ export default function EventSignUp({ userData, userId }) {
                 setShowConfirmation(!showConfirmation)
                 
                 console.log("Submitting User Data:", updatedUserData)
-
-                //Update the users table
-                const responseOne = await axios.put(`${API}/users/${userId}`, updatedUserData);
-
-                // Insert a record into the users_events table
-                const responseTwo = await axios.post(`${API}/users-events/${userId}`, { event_id: eventId });
 
                 console.log("Submitted successfully")
                 navigate(`/profile/${userId}`)
