@@ -9,7 +9,6 @@ import './App.css'
 const API = process.env.REACT_APP_API_URL
 
 // PAGES
-import Account from './pages/Account'
 import About from './pages/About'
 import Home from './pages/Home'
 import Login from './pages/Login'
@@ -23,6 +22,7 @@ import ProofPage from "./pages/ProofPage"
 // COMPONENTS
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import Account from './components/Account'
 import Profile from './components/PublicProfiles'
 // import UserPictureForm from "./components/UserPictureForm"
 // import CurrentEvent from './components/CurrentEvent'
@@ -46,7 +46,7 @@ function App() {
           const response = await axios.get(`${API}/users`)
           // console.log(response.data) // working
           const loggedInUser = response.data.find(verifiedUser => {
-            console.log(verifiedUser) // working
+            // console.log(verifiedUser) // working
             return verifiedUser.firebase_uid === userUid
           })
           console.log(loggedInUser.username, `is logged in`) // working
