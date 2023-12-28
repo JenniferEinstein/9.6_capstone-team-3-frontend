@@ -11,8 +11,29 @@
 
 
 .homepage-signup-link{
-  padding-top: 10rem;
+  color: white;
+  background-color: #6474ed;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid transparent; 
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
+
+.homepage-signup-link:hover{
+  color: #6474ed;
+  background-color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid transparent; 
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
 
 .title-slogan-container {
   display: flex;
@@ -170,47 +191,36 @@ h1 {
   align-items: center;
 }
 
-.homepage-signup-link {
-    color: white;;
-    background-color: #6474ed;;
-    text-decoration: none;
-    padding: 10px 20px;
-    border: 2px solid white;;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;  
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-}
+
 
 #main-signup-link {
-  color: white;
-  background: linear-gradient(to right, #ED6495, #FD85A1); 
+ background:#ED6495; 
+ color: white;
+ text-decoration: none;
+ padding: 10px 20px;
+ border: 2px solid transparent; 
+ border-radius: 30px;
+ font-weight: bold;
+ transition: background-color 0.3s, color 0.3s;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+ 
+}
+
+#main-signup-link:hover {
+  background:white; 
+  color: #ED6495;
   text-decoration: none;
   padding: 10px 20px;
-  border: 2px solid white;
-  border-radius: 15px;
+  border: 2px solid transparent; 
+  border-radius: 30px;
   font-weight: bold;
   transition: background-color 0.3s, color 0.3s;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
-#main-signup-link:hover {
-  color: #ED6495;
-  background: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  border-color: #ED6495;
-}
 
 
 
-.homepage-signup-link:hover {
-  color: #6474ed;;
-  background: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  border-color: #6474ed;;
-}
 
 .gallery-container{
   padding-top: 15px;

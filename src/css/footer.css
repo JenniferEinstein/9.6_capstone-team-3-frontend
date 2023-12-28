@@ -97,19 +97,27 @@ text-decoration: none;
 }
 
 .call-to-action-signup-link {
+  background:#ED6495; 
   color: white;
-  background: #ED6495; 
   text-decoration: none;
   padding: 10px 20px;
-  border: 2px solid white;
+  border: 2px solid transparent; 
   border-radius: 30px;
   font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .call-to-action-signup-link:hover {
-  background: white; 
-  color: #ED6495
+  background:white; 
+  color: #ED6495;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid transparent; 
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 

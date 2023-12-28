@@ -9,6 +9,7 @@
   padding: 3rem 0;
   background-color: #e8effc;
   margin: 20px; 
+  margin-left: -80px;
 }
 
 
@@ -25,7 +26,7 @@
 .address-inputs input,
 .bio-input input,
 .bio-input textarea {
-  background-color: #e8effc;; 
+  background-color: #F8F8F8;; 
   border: 1px solid black;
 }
 
@@ -40,14 +41,14 @@ margin: 0 auto;
 
 
 
-
 .account-inputs {
   display: flex;
   align-items: flex-start; 
   border: 1px solid black;
   padding: 20px;
   border-radius: 5px; 
-  background-color: white;
+  background-color: #A4C1F4;;
+  min-width: 600px ;
 }
 
 .account-inputs-text {
@@ -98,7 +99,8 @@ margin: 0 auto;
   border: 1px solid black;
   padding: 20px;
   border-radius: 5px;
-  background-color: white;
+  background-color: #A4C1F4;;
+  min-width: 600px ;
 }
 
 .name-inputs-text {
@@ -139,7 +141,8 @@ margin: 0 auto;
   border: 1px solid black;
   padding: 20px;
   border-radius: 5px;
-  background-color: white;
+  background-color: #A4C1F4;;
+  min-width: 600px ;
 }
 
 .address-inputs-text {
@@ -181,7 +184,8 @@ margin: 0 auto;
   border: 1px solid black;
   padding: 20px;
   border-radius: 5px;
-  background-color: white;
+  background-color: #A4C1F4;;
+  min-width: 600px ;
 }
 
 .bio-input-text {
@@ -214,29 +218,34 @@ margin: 0 auto;
 
 /*Button CSS*/
 #signup-button-submit {
-  color: #fffaeb;
+  color: white;
   background-color: #6474ed;
   text-decoration: none;
   padding: 10px 20px;
-  border: 2px solid #fffaeb;
+  border: 2px solid transparent; 
   border-radius: 30px;
   font-weight: bold;
   transition: background-color 0.3s, color 0.3s;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  margin: 0.5rem 0;
 }
 
 #signup-button-submit:hover {
   color: #6474ed;
-  background: white;
-  transform: translateY(-2px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  border-color: #6474ed;
+  background-color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid transparent; 
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 
 
-
+#signup-button-container{
+  margin-left: 100px;
+}
 
 
 
@@ -261,17 +270,14 @@ box-sizing: border-box;
 
 
 
-.account-inputs{
-
-}
 
 /*Button CSS*/
 #signup-button-submit {
-  color: #fffaeb;
+  color: white;
   background-color: #6474ed;
   text-decoration: none;
   padding: 10px 20px;
-  border: 2px solid #fffaeb;
+  border: 2px solid transparent; 
   border-radius: 30px;
   font-weight: bold;
   transition: background-color 0.3s, color 0.3s;
@@ -281,10 +287,14 @@ box-sizing: border-box;
 
 #signup-button-submit:hover {
   color: #6474ed;
-  background: white;
-  transform: translateY(-2px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  border-color: #6474ed;
+  background-color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid transparent; 
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 #error-message-container {
@@ -354,3 +364,4 @@ width: 100%;
 color: white;
 margin: 0; 
 }
+

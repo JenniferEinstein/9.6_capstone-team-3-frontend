@@ -107,7 +107,7 @@
   background-color: #6474ed;
   text-decoration: none;
   padding: 10px 20px;
-  border: 2px solid white;
+  border: 2px solid transparent; 
   border-radius: 30px;
   font-weight: bold;
   transition: background-color 0.3s, color 0.3s;
@@ -116,10 +116,14 @@
 
 .show-button:hover {
   color: #6474ed;
-  background: white;
-  transform: translateY(-2px);
+  background-color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 2px solid transparent; 
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  border-color: #6474ed;
 }
 
 #picture-card-h1-title{

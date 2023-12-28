@@ -106,7 +106,7 @@ export default function PublicProfiles({userData}) {
       </div>
       {/* <Sidebar /> */}
       {user ? (
-        <ul>
+        <ul className=" profile right-column">
           <PublicProfile key={user.id} user={user} userData = {userData} />
         </ul>
       ) : (

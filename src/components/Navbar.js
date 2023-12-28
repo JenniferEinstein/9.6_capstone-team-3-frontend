@@ -25,7 +25,7 @@ function NavBar({ handleLogout, user, userId }) {
         <Link to="/" className="navbar-logo">
           <Logo />
         </Link>
-        <div className='navbar-middle-links'>
+        <div id='navbar-middle-links'>
           <Link to="/events" id="events-middle-link" className="navbar-middle-link">Events</Link>
           <Link to="/how-it-works" id="hiw-middle-link" className="navbar-middle-link">How it works</Link>
           <Link to="/about" id="about-middle-link" className="navbar-middle-link">About</Link>

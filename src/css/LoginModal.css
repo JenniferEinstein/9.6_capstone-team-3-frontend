@@ -162,11 +162,11 @@
     flex: 1, 2;
     margin-right: -35px;
     margin-left: 5px;
-    color: #fffaeb;
+    color: white;
     background-color: #6474ed;
     text-decoration: none;
     padding: 10px 20px;
-    border: 2px solid #fffaeb;
+    border: 2px solid transparent; 
     border-radius: 30px;
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
@@ -175,20 +175,24 @@
   
   .button:hover {
     color: #6474ed;
-    background: white;
-    transform: translateY(-2px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    border-color: #6474ed;
+    background-color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid transparent; 
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   }
   
 
   #login-button {
     display: inline-block;
-    color: #fffaeb;
+    color: white;
     background-color: #6474ed;
     text-decoration: none;
     padding: 10px 20px;
-    border: 2px solid #fffaeb;
+    border: 2px solid transparent; 
     border-radius: 30px;
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
@@ -198,10 +202,14 @@
   
   #login-button:hover {
     color: #6474ed;
-    background: white;
-    transform: translateY(-2px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    border-color: #6474ed;
+    background-color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid transparent; 
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   }
   
 
@@ -217,7 +225,8 @@
     top: 5px;
     cursor: pointer;
     padding-top: 5px;
-    margin-right: 10px;
+    margin-right: 20px;
+    font-size: 30px;
   }
   
   .close:hover {

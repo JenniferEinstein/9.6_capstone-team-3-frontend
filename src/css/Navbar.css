@@ -23,14 +23,13 @@
 
   .navbar-login-link{
     color: white;
-    background: #6474ed; 
+    background-color: #6474ed;
     text-decoration: none;
     padding: 10px 20px;
-    border: 2px solid white;
-    border-radius: 15px;
+    border: 2px solid transparent; 
+    border-radius: 30px;
     font-weight: bold;
-    transition: color 0.3s, background-color 0.3s, transform 0.3s;
-    position: relative;
+    transition: background-color 0.3s, color 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   }
   
@@ -38,36 +37,55 @@
     color: #FFFAEB;
     text-decoration: none;
     margin: 0 20px;
-    transition: color 0.3s, background-color 0.3s, transform 0.3s;
-    position: relative;
+
   }
   
   .navbar-links a:hover {
     color: #6474ed;
-    background: white;
-    transform: translateY(-2px);
+    background-color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid transparent; 
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    border: 2px solid #6474ed;
+  
   }
 
   .navbar-links button:hover {
     color: #6474ed;
-    background: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    border: 2px solid #6474ed;
-  }
-  
-  .navbar-login-link, .navbar-events-link {
+    background-color: white;
+    text-decoration: none;
     padding: 10px 20px;
-    border: 2px solid #FFFAEB;
+    border: 2px solid transparent; 
     border-radius: 30px;
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  .navbar-login-link, .navbar-events-link {
+    color: white;
+    background-color: #6474ed;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid transparent; 
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   }
   
   .navbar-login-link {
-    background: #6474ed;
+    color: white;
+    background-color: #6474ed;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid transparent; 
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   }
 
@@ -84,7 +102,7 @@
     align-items: center; 
   }
   
-  .navbar-middle-links {
+  #navbar-middle-links {
     display: flex;
     gap: 65px;
     margin-left: auto;
@@ -96,14 +114,14 @@
   }
 
 
-  .navbar-middle-links a {
+  #navbar-middle-links a {
     color: white;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
   }
   
-  .navbar-middle-links a:hover {
+  #navbar-middle-links a:hover {
     color: #6474ed;
   }
   
@@ -115,19 +133,39 @@
 
   #navbar-signup{
     padding: 7.5px 12px;
+    color: white;
+    background-color: #6474ed;
+    text-decoration: none;
+    border: 2px solid transparent; 
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+
+
+  #navbar-signup:hover{
+    padding: 7.5px 12px;
+    color: #6474ed;
+    background-color: white;
+    text-decoration: none;
+    border: 2px solid transparent; 
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   }
 
 
   #navbar-profile-link {
-    text-decoration: none;
-    color: white;;
-    background-color: #6474ed;;
+    color: white;
+    background-color: #6474ed;
     text-decoration: none;
     padding: 10px 20px;
-    border: 2px solid white;;
+    border: 2px solid transparent; 
     border-radius: 30px;
     font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;  
+    transition: background-color 0.3s, color 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   }
 
@@ -135,14 +173,13 @@
   #navbar-profile-link:hover{
     color: #6474ed;
     background-color: white;
-  
-   
-    border: 1px solid #6474ed;;
-    border-radius: 30px;
-
-    transition: background-color 0.3s, color 0.3s;  
-   
     text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid transparent; 
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   }
   
 
@@ -177,7 +214,7 @@
   
     #navbar-profile-link,
     #navbar-logout {
-      margin-left: -10px; /* Adjust the margin as needed */
+      margin-left: -10px; 
     }
   
     .navbar-middle-links {

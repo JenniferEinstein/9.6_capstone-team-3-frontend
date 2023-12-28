@@ -98,6 +98,7 @@ const Signup = () => {
 
   return (
     <>
+    <div id="signup-page-container"></div>
       <div className="signup-title-container" id="signup-title-container">
         <div id="signup-image-container">
           <img src={registrationSignupImage} alt="Register" />
@@ -266,6 +267,7 @@ const Signup = () => {
                 </label>
               </div>
             </div>
+            <div id="signup-button-container">
             <button
               id="signup-button-submit"
               type="submit"
@@ -273,6 +275,7 @@ const Signup = () => {
             >
               {isLoading ? "Signing up..." : "Signup"}
             </button>
+            </div>
           </form>
         </div>
         <div id="error-message-container"></div>
