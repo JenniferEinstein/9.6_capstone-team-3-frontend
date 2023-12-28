@@ -22,7 +22,7 @@ body {
 .webpage-container {
     display: flex;
     border: 2px solid black;
-    justify-content: space-between; 
+    /* justify-content: space-between;  */
     /* margin: 20px;  */
     padding-left: 0px;
     text-align: start;
@@ -34,29 +34,19 @@ body {
     border-right: 1px solid #a4c1f46b;
     border: 2px solid black;
     flex: 0 0 auto;
-    /* flex-direction: column; */
     text-align: center;
 }
 .left-column,
 .right-column {
-    /* display: flex; */
-    /* flex-direction: column;  */
-    /* box-sizing: border-box; */
+    flex-direction: column; 
+    box-sizing: border-box;
     /* padding: 20px 10px 10px 10px; */
-}
-.right-column{
-    width: 100%;
-    /* display: flex; */
-    /* flex-direction: column; */
 }
 /* SideBar */
 .menu-details {
     color: rgb(255, 255, 255);
     margin: 0;
     padding: 70px 10px;
-}
-.profile {
-    padding: 0;
 }
 .sidebar-text, .sidebar-links {
     color: white;
@@ -97,91 +87,46 @@ body {
 }
 
 /* Classes In Individual Profile */
-.profile-container {
-    /* display: flex; */
+
+.bio-container, .posts-container{
     /* flex-direction: column; */
+    /* border: 2px solid #A4C1F4; */
+    /* text-align: center; */
 }
-.profile-content{
+
+.bio-container{
+    border-bottom: 1px solid #A4C1F4;
+    border: 2px solid black;
     display: flex;
-    /* border: 2px solid black; */
-    /* justify-content: space-between;  */
-    margin: 0 5% 0 5%; 
-    /* padding-left: 0px; */
-    /* text-align: start; */
-    /* width: 100%; */
-}
-.profile-header
-{
-    /* display: flex; */
-    /* flex-direction: column; */
-}
-.bio-container-left{
-    background-color: #E8EFFC;
-    /* border: 1px rgba(0, 0, 0, 0.189) solid; */
-    border-radius: 100px 100px 0 0;
-    display: flex;
-    flex-direction: column;
-    /* border: 5px solid rgb(194, 19, 19); */
-    /* border-bottom: 1px solid #A4C1F4; */
-    /* display: flex; */
-    margin: -80px 5% 0 0;
-    padding: 20px;
     text-align: center;
-
-}
-.pfp-container {
-    flex-direction: column;
-}
-.bio-content {
-
-}
-.cover-pic{
-    /* display: flex; */
     /* flex-direction: column; */
-    max-height: 300px;
-    min-height: 300px;
-    object-fit: cover;
-    width: 100%;
+}
+
+.pfp-container{
+    border: 2px solid rgba(0, 0, 0, 0.147);
+    border-radius: 50px;
 }
 .pfp{
-    background-color: #000000;
-    border: 3px solid rgba(0, 0, 0, 0.147);
-    border-radius: 200px;
-    height: 170px;
-    margin: 0 0 30% 0;
     width: 170px;
-    text-align: start;
+    height: 170px;
 }
 .username{
-    text-align: center;
+    /* text-align: center; */
     /* flex-direction: column; */
 }
 .logo{
     width: 42px;
     height: 42px;
 }
-.logo-container{
-    border: 2px solid ;
-
-}
-.posts-container-right{
-    border: 5px dotted gray;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-}
-.posts-headings{
-    /* flex-direction: column; */
-}
 .funfacts{
     list-style-position: inside;
     list-style: upper-roman;
 }
-.get-to-know{
-    /* flex-direction: column; */
-    
+.logo-container{
+    border: 2px solid ;
+
 }
+
 .achievements-title{
     text-align: start;
 }
