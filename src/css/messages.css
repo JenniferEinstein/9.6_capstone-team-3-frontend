@@ -45,6 +45,11 @@ body{
     margin: 0 30% 5%;
 }
   
+#upload-modal-button-in-message {
+  display: flex;
+  justify-content: center;
+}
+
 /* Add a footer-like style for the last paragraph */
 .message p:last-child {
     margin-top: 20px; 
