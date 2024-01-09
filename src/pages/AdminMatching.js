@@ -24,8 +24,9 @@
 
     const fetchEventInfo = async (id) => {
       try {
-          const response = await axios.get(`${API}/events/${id}`); // doublecheck this endpoint
+          const response = await axios.get(`${API}/events/${id}`); 
           setEventInfo(response.data);
+          console.log("the response data is",response.data)
       } catch (error) {
           console.error('Error fetching event info:', error);
       }
@@ -42,7 +43,8 @@
         const response = await axios.get(`${API}/users/match-users/${eventId}`);
         setMatches(response.data);
         console.log('Matched users:', response.data);
-        navigate('/notification');  // Replace '/notification' with the actual path of your notification page
+        console.log('matches',matches);
+        // navigate('/notification');  // Replace '/notification' with the actual path of your notification page
       } catch (error){
         console.error('Error matching users:', error)
           // Do we need to Handle the error, e.g., show an error message to the user?
@@ -67,14 +69,14 @@
           Match users for this event
         </button>
         <hr/>
-          {eventInfo && matches.map(match => (
+          {/* {eventInfo && matches.map(match => (
                   <MessageMatch 
                       key={match.giver.id} 
                       giver={match.giver} 
                       receiver={match.receiver} 
                       event={eventInfo} 
                   />
-              ))}
+              ))} */}
       </div>
     )
   }

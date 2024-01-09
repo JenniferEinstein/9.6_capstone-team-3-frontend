@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import '../css/messages.css';
 
 function MessageMatch( {giver, receiver, event} ) {
+    if (!giver || !receiver || !event) {
+        console.error('Invalid props:', { giver, receiver, event });
+        return <div>Invalid data</div>;
+    }
   return (
 <div className="message">
     {/* <h1>logo here</h1> */}
