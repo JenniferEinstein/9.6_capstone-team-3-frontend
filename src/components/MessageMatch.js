@@ -8,6 +8,8 @@ function MessageMatch( {giver, receiver, event} ) {
     {/* <h1>logo here</h1> */}
     {/* <h2>
         <span>Congratulations {giver.name_first}!<br />You've Been Matched for the Gift Exchange! </span></h2> */}
+            <h2>
+        <span>Congratulations Mozzy!<br />You've Been Matched for the Gift Exchange! </span></h2>
     <p>Exciting news! You've been successfully matched for the upcoming Gift Exchange. Now, the joy of gift-giving begins! To help you get started, here's some information about your recipient's preferences:</p>
     <div className='hardcoded'>
         <ul className='message-list'>
