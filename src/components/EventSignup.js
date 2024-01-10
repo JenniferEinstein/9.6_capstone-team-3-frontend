@@ -128,33 +128,31 @@ export default function EventSignUp({ userData, userId }) {
         
         <form className='signup-form'>
             <label htmlFor="preferred_gift"> Considering the event theme, kindly specify the type of gift you desire most.</label>
-            <input type="text" id="preferred_gift" onChange={handleInputChange} value={userDataForEvents.preferred_gift} placeholder='e.g Travel Bag...' required/>
+            <input type="text" id="preferred_gift" onChange={handleInputChange} value={userDataForEvents.preferred_gift} placeholder='e.g., travel bag' required/>
             <br />
-            <label htmlFor="gifts_avoid"> Considering the event theme, kindly specify the type of gifts your match should avoid.</label>
-            <input type="text" id="gifts_avoid" onChange={handleInputChange} value={userDataForEvents.gifts_avoid} placeholder=' e.g "Can you avoid Cosmetics please.."' required/>
+            <label htmlFor="gifts_avoid">Considering the event theme, kindly specify the type of gifts your match should avoid.</label>
+            <input type="text" id="gifts_avoid" onChange={handleInputChange} value={userDataForEvents.gifts_avoid} placeholder=' e.g., no cosmetics please' required/>
             <br />
-            {/* <label htmlFor="budget"> What's your spending cap?:</label>
-            <input type="number" id="budget" onChange={handleInputChange} value={userDataForEvents.budget} required/>
-            <br /> */}
             <label htmlFor="favorite_color"> What's your favorite color?</label>
-            <input type="text" id="favorite_color"  onChange={handleInputChange} value={userDataForEvents.favorite_color} placeholder='e.g Brown..' required/>
+            <br />
+            <input type="text" id="favorite_color"  onChange={handleInputChange} value={userDataForEvents.favorite_color} placeholder='e.g., brown' required/>
             <br />
             <label htmlFor="preferred_category">Considering the theme, specify the type or category of gift you are most eager to receive?</label>
-            <input type="text" id="preferred_category" onChange={handleInputChange} value={userDataForEvents.preferred_category} placeholder='e.g Technology, Fashion, Books , etc...' required/>
+            <input type="text" id="preferred_category" onChange={handleInputChange} value={userDataForEvents.preferred_category} placeholder='e.g., technology, fashion, books, etc.' required/>
             <br />
-            <label className="clothes" htmlFor="clothes" > If desired, 
+            {/* <label className="clothes" htmlFor="clothes" > If desired, 
             <br />
                 <label className='clothes-labels' htmlFor="shirt_size">Shirt Size:
-                <input type="text" id="shirt_size" onChange={handleInputChange} value={userDataForEvents.shirt_size} placeholder=' e.g "Womens S"'/>
+                <input type="text" id="shirt_size" onChange={handleInputChange} value={userDataForEvents.shirt_size} placeholder=' e.g., womens S'/>
                 </label>
                 <label className='clothes-labels' htmlFor="pants_size">Pants Size:
-                <input type="text" id="pants_size" onChange={handleInputChange} value={userDataForEvents.pants_size} placeholder=' e.g "Womens M"' />
+                <input type="text" id="pants_size" onChange={handleInputChange} value={userDataForEvents.pants_size} placeholder=' e.g., womens M' />
                 </label>
                 <label className='clothes-labels' htmlFor="shoe_size">Shoes Size:
-                <input type="text" id="shoe_size" onChange={handleInputChange} value={userDataForEvents.shoe_size} placeholder=' e.g "Womens 5"'/>
+                <input type="text" id="shoe_size" onChange={handleInputChange} value={userDataForEvents.shoe_size} placeholder='e.g., womens 5'/>
                 </label>
             <br />
-            </label>
+            </label> */}
             <label className="duplicate" htmlFor="duplicate"> Are you open to receiving duplicate items or similar versions of those you already own? 
                 <select id="duplicate" value={selectedOption} onChange={handleOptionChange} required>
                     <option value=""></option>

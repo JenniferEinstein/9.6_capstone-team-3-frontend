@@ -526,7 +526,7 @@
     height: auto;
 }
 .section-header{
-    color: #ED6495;
+
     font-size: 27px;
     margin: 20px;
 }
@@ -570,7 +570,8 @@
     outline-color: #ED6495;
     padding: 10px;
     margin: 5px;
-    width: 300px;
+    margin-left: 30px;
+    width: 80%;
     /* height: 3%; */
     /* display: inline; */
 }
@@ -604,7 +605,7 @@
 }
 
 .welcome, .welcome-2{
-    color:#fff;
+    color:#6474ED;
     display: inline;
     font-size: 47px;
     margin: 10px;
