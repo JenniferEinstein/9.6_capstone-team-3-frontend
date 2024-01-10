@@ -160,6 +160,8 @@
     background-color: #ccc;
     cursor: not-allowed;
   }
+
+  
   
   /* Loading Text CSS */
   #upload-loading-text {
@@ -193,7 +195,6 @@
 }
 
 .thumbnail-image {
-
   max-width: 200px;
   max-height: 200px;
 }
