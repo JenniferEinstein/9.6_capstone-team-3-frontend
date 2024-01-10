@@ -15,6 +15,12 @@
     border-radius: 8px;
   }
   
+  .upload-modal-container img {
+    max-width: 100%; /* Ensures image is not wider than the modal */
+    height: auto; /* Keeps the image aspect ratio */
+}
+
+
   .upload-modal-content {
     background-color: #E8EFFC;
     padding: 0px;
@@ -160,8 +166,6 @@
     background-color: #ccc;
     cursor: not-allowed;
   }
-
-  
   
   /* Loading Text CSS */
   #upload-loading-text {
@@ -189,6 +193,8 @@
     padding-bottom: 40px;
 }
  
+
+  /* Thumbnail Preview CSS */
 .thumbnail {
   margin-left: auto;
   margin-right: auto;
@@ -197,6 +203,10 @@
 .thumbnail-image {
   max-width: 200px;
   max-height: 200px;
+}
+
+#upload-modal-thumbnail h2 {
+  
 }
 
 .upload-input-container {

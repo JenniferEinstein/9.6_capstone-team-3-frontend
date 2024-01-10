@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { storageRef } from "../firebaseStorage";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import axios from "axios";
 
 import "../css/Upload.css";
-
-//Modal.setAppElement('#root'); //this is so accessibility readers can read the modal
 
 const UploadModal = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,8 +18,23 @@ const UploadModal = () => {
   const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024;
 
   const openModal = () => setIsOpen(true);
+  const openModalButtonRef = useRef(null); 
+  const firstInputRef = useRef(null);
+
+
+  useEffect(() => {
+    if (isOpen) {
+        firstInputRef.current.focus(); // Set focus to the first input when modal opens
+    }
+  }, [isOpen]);
+
+
+
   const closeModal = () => {
     setIsOpen(false);
+    if (openModalButtonRef.current) {
+      openModalButtonRef.current.focus(); // Return focus to the open modal button when closed
+    }
     setTitle("");
     setBlurb("");
     setFileUrl(null);  //reset thumbnail preview
@@ -106,8 +119,12 @@ const UploadModal = () => {
 
   return (
     <div>
-      <button id="upload-gift-button" onClick={openModal}>
-        Upload Picture of Gift
+      <button
+        ref={openModalButtonRef}
+        id="upload-gift-button" 
+        onClick={openModal}
+      >
+        Upload Picture
       </button>
       {isOpen && (
         <div className="upload-modal-container">
@@ -126,6 +143,7 @@ const UploadModal = () => {
               <div className="upload-input-container title-568">
                 <label>Title (required)</label>
                 <input
+                  ref={firstInputRef}
                   type="text"
                   id="picture-title"
                   value={title}
@@ -158,7 +176,7 @@ const UploadModal = () => {
               </div>
               
               {selectedFile && (
-              <div className='thumbnail'>
+              <div className='thumbnail' id="upload-modal-thumbnail">
                 <h2>Thumbnail Preview:</h2>
                 <img src={fileUrl} alt={altText || "Image preview"} className="thumbnail-image" />
                 </div>
